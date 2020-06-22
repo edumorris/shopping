@@ -15,11 +15,18 @@ export class CartComponent implements OnInit {
 
   totalCost: number;
 
-  totalCalculator() {   
+  totalCalculator() {
+    /*   
     for(let i = 0; i <= this.items.length; i++) {
       this.totalCost = this.totalCost + this.items[i].cost;
     }
     return this.totalCost;
+    */
+   for (let i in this.items) {
+     this.totalCost = this.totalCost + this.items[i].cost;
+   }
+
+   return this.totalCost;
   }
 
   constructor() {
@@ -27,7 +34,7 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.totalCost = 0;
+    this.totalCost = this.totalCalculator();
   }
 
 }
