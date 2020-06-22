@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<div class="items">
+    <h2>Shopping Items</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor='let item of items'>
+            <td>{{ item.name }}</td>
+            <td>{{ item.cost }}</td>
+        </tr>
+        <tr>
+            <td>Total Price: </td>
+            <td>{{ totalCost }}</td>
+        </tr>
+    </table>
+</div>
