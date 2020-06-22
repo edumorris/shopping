@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Items } from '../items';
 
 @Component({
   selector: 'app-cart-form',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-form.component.css']
 })
 export class CartFormComponent implements OnInit {
+
+  newItem = new Items("", 0);
+
+  @Output() itemAdd = new EventEmitter<Items>();
+
+  addItem() {
+    this.itemAdd.emit(this.newItem);
+  }
 
   constructor() { }
 

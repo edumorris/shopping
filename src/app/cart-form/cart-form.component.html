@@ -1,1 +1,20 @@
-<p>cart-form works!</p>
+<div class="container">
+    <h2>Add Item to Cart</h2>
+    <form #itemForm='ngForm' (ngSubmit)='addItem()'>
+        <div class="form-group">
+            <label for="itemName">Item Name:</label>
+            <input type="text" class="form-control" id="itemName" name="itemName" [(ngModel)]="newItem.name" #itemName='ngModel' placeholder="Item Name..." required>
+            <div [hidden]="itemName.valid || itemName.pristine" class="alert alert-danger">
+                <p>Item name is required</p>
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="item-cost">Cost:</label>
+            <input type="number" class="form-control" id="itemCost" name="itemCost" [(ngModel)]="newItem.cost" #itemCost='ngModel' placeholder="Item Cost..." required>
+            <div [hidden]="itemCost.valid || itemCost.pristine" class="alert alert-danger">
+                <p>Item cost is required</p>
+              </div>
+        </div>
+        <input type="submit" class="btn btn-success" name="Add Item">
+    </form>
+</div>

@@ -29,6 +29,10 @@ export class CartComponent implements OnInit {
    return this.totalCost;
   }
 
+  addNewItem(itemAdd) {
+    this.items.push(itemAdd);
+  }
+
   constructor() {
     //this.totalCost = this.totalCalculator();
    }
