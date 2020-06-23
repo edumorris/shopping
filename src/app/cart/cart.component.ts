@@ -8,9 +8,9 @@ import { Items } from '../items';
 })
 export class CartComponent implements OnInit {
   items: Items[] = [
-    { name: "Soap", cost: 100 },
-    { name: "Juice", cost: 150 },
-    { name: "Rice", cost: 246 },
+    //{ name: "Soap", cost: 100 },
+    //{ name: "Juice", cost: 150 },
+    //{ name: "Rice", cost: 246 },
   ];
 
   totalCost: number;
@@ -52,6 +52,7 @@ export class CartComponent implements OnInit {
 
   addNewItem(itemAdd) {
     this.items.push(itemAdd);
+    this.totalcalculator();
   }
 
   emptyCart() {
@@ -63,6 +64,8 @@ export class CartComponent implements OnInit {
     //this.totalCost = this.totalCalculator();
    }
 
-  ngOnInit() {  }
+  ngOnInit() {
+    this.totalcalculator();
+    }
 
 }
