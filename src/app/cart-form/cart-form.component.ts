@@ -8,12 +8,13 @@ import { Items } from '../items';
 })
 export class CartFormComponent implements OnInit {
 
-  newItem = new Items("", 0);
+  newItem = new Items("", 0, 0);
 
   @Output() itemAdd = new EventEmitter<Items>();
 
   addItem() {
     this.itemAdd.emit(this.newItem);
+    //this.itemForm.reset();
   }
 
   constructor() { }

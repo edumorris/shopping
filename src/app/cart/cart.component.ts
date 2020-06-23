@@ -8,13 +8,15 @@ import { Items } from '../items';
 })
 export class CartComponent implements OnInit {
   items: Items[] = [
-    //{ name: "Soap", cost: 100 },
-    //{ name: "Juice", cost: 150 },
-    //{ name: "Rice", cost: 246 },
+    //new Items('Soap', 200, 1),
+   //{ id: 1, name: "Soap", cost: 100 },
+    //{ id: 2, name: "Juice", cost: 150 },
+    //{ id: 3, name: "Rice", cost: 246 },
   ];
 
   totalCost: number;
 
+  /*
   private _items: Items[];
   
   @Input() get item(): Items[] {
@@ -27,6 +29,7 @@ export class CartComponent implements OnInit {
       this.totalcalculator();
     }
   }
+  */
 
   totalcalculator() {
     this.totalCost = 0;
@@ -51,6 +54,8 @@ export class CartComponent implements OnInit {
   */
 
   addNewItem(itemAdd) {
+    let totalCartItems = this.items.length;
+    itemAdd.id = totalCartItems + 1;
     this.items.push(itemAdd);
     this.totalcalculator();
   }
