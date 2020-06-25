@@ -8,7 +8,7 @@ import { Items } from '../items';
 })
 export class CartComponent implements OnInit {
   items: Items[] = [
-    //new Items('Soap', 200, 1),
+    new Items('Soap', 200, 1),
    //{ id: 1, name: "Soap", cost: 100 },
     //{ id: 2, name: "Juice", cost: 150 },
     //{ id: 3, name: "Rice", cost: 246 },
@@ -63,6 +63,7 @@ export class CartComponent implements OnInit {
   emptyCart() {
     confirm('Are you sure you want to empty your cart?');
     this.items = [];
+    this.totalcalculator();
   }
 
   constructor() {
