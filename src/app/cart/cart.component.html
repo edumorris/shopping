@@ -2,9 +2,9 @@
 <app-cart-form (itemAdd)="addNewItem($event)"></app-cart-form>
 <hr>
 <div class="items">
-    <h2>Shopping Items</h2>
-    <button class="btn btn-danger" (click)="emptyCart()" style="float: right; padding-right: 20px;">Empty Cart</button>
-    <table class="table table-condensed table-hover">
+    <h2 class="text-center">Shopping Items</h2>
+    <button class="btn btn-danger empty-button" (click)="emptyCart()">Empty Cart</button>
+    <table class="table table-condensed">
         <tr>
             <th>Item</th>
             <th>Price</th>
@@ -13,7 +13,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.cost }}</td>
         </tr>
-        <tr style="background-color: yellow; color: #0000FF; font-weight: bold;">
+        <tr class="totals-row">
             <td>Total Price: </td>
             <td>{{ totalCost }}</td>
         </tr>
